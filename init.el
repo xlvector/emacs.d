@@ -21,6 +21,8 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/ac-dict")
 (ac-config-default)
 
+(require 'google-c-style)
+
 (require 'go-autocomplete)
 
 (defun my-go-mode-hook ()
