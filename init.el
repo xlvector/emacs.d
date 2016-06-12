@@ -9,6 +9,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'git-emacs)
 
+(require 'cuda-mode)
+
 (require 'column-enforce-mode)
 (global-column-enforce-mode t)
 
