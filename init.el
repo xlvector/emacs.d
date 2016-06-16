@@ -5,6 +5,7 @@
 (setq linum-format "%d ")
 (global-linum-mode t)
 
+(standard-display-ascii ?\t "^")
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'git-emacs)
@@ -23,7 +24,9 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/lisp/ac-dict")
 (ac-config-default)
 
-(require 'google-c-style)
+(require 'google-c-style)  
+(add-hook 'c-mode-common-hook 'google-set-c-style)  
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 (require 'go-autocomplete)
 
