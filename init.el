@@ -1,14 +1,21 @@
 (setq make-backup-files nil)
 (setq column-number-mode t)
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 ;;line number
-(setq linum-format "%d ")
-(global-linum-mode t)
+;;(setq linum-format "%d ")
+;;(global-linum-mode t)
+
+(require 'linum)
 
 (standard-display-ascii ?\t "^")
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-(require 'git-emacs)
+
+(require 'color-theme)
+(color-theme-blue-sea)
+;;(load-theme 'wombat t)
+
+;;(require 'git-emacs)
 
 (require 'cuda-mode)
 
@@ -50,9 +57,6 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
-(require 'color-theme)
-
-(load-theme 'wombat t)
 
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key (kbd "<f4>") 'shell)
