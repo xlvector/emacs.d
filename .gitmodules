@@ -1,0 +1,6 @@
+[submodule "lisp/icicles"]
+	path = lisp/icicles
+	url = https://github.com/emacsmirror/icicles
+[submodule "lisp/emacs-neotree"]
+	path = lisp/emacs-neotree
+	url = https://github.com/jaypei/emacs-neotree
