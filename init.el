@@ -27,7 +27,7 @@
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
 (defun command-line-diff (switch)
   (let ((file1 (pop command-line-args-left))
