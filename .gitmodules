@@ -4,3 +4,6 @@
 [submodule "lisp/emacs-neotree"]
 	path = lisp/emacs-neotree
 	url = https://github.com/jaypei/emacs-neotree
+[submodule "lisp/yaml-mode"]
+	path = lisp/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode

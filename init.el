@@ -23,6 +23,11 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-neotree/")
+(add-to-list 'load-path "~/.emacs.d/lisp/yaml-mode/")
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 (defun command-line-diff (switch)
   (let ((file1 (pop command-line-args-left))
