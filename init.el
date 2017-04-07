@@ -29,6 +29,12 @@
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 (defun command-line-diff (switch)
   (let ((file1 (pop command-line-args-left))
         (file2 (pop command-line-args-left)))
@@ -107,8 +113,8 @@
   (defconst directory-files-no-dot-files-regexp "^\\([^.]\\|\\.\\([^.]\\|\\..\\)\\).*"
     "Regexp that matches anything except `.' and `..'."))
 
-(require 'neotree)
-(global-set-key (kbd "<f7>") 'neotree-toggle)
+;;(require 'neotree)
+;;(global-set-key (kbd "<f7>") 'neotree-toggle)
 (global-set-key (kbd "<f12>") 'compile)
 (setq compile-command "make opt -j10")
 (global-set-key (kbd "<f4>") 'shell)
