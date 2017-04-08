@@ -1,4 +1,5 @@
 (setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
 (setq column-number-mode t)
 (setq inhibit-startup-screen t)
 (setq truncate-partial-width-windows t)
@@ -14,6 +15,7 @@
 (add-to-list 'package-archives
 	     '("popkit" . "http://elpa.popkit.org/packages/"))
 
+
 (global-set-key (kbd "C-c <left>")  'windmove-left)
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
@@ -24,6 +26,21 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/emacs-neotree/")
 (add-to-list 'load-path "~/.emacs.d/lisp/yaml-mode/")
+
+(add-to-list 'load-path "~/.emacs.d/lisp/flymake-google-cpplint.el")
+(require 'flymake-google-cpplint)
+(custom-set-variables
+ '(flymake-google-cpplint-verbose "3")
+ '(flymake-google-cpplint-filter "-legal")
+ '(flymake-google-cpplint-linelength "120")
+ '(flymake-google-cpplint-location 'tempdir)
+ '(flymake-google-cpplint-command "~/.emacs.d/cpplint.sh")
+)
+
+(add-hook 'c-mode-hook 'flymake-google-cpplint-load)
+(add-hook 'c++-mode-hook 'flymake-google-cpplint-load)
+
+
 
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
